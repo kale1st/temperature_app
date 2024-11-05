@@ -1,9 +1,9 @@
 <div class="gauge-container">
   <div class="gauge">
     <app-temperature-display
-      [minTemperature]="minTemperature()"
-      [maxTemperature]="maxTemperature()"
-      [targetTemperature]="targetTemperature()"
+      [minTemperature]="temSer.minTemperature()"
+      [maxTemperature]="temSer.maxTemperature()"
+      [targetTemperature]="temSer.targetTemperature()"
     ></app-temperature-display>
   </div>
 
@@ -13,24 +13,24 @@
     <input
       type="number"
       id="minTemperature"
-      [value]="minTemperature()"
-      (input)="updateMinTemperature($event)"
+      [value]="temSer.minTemperature()"
+      (input)="temSer.updateMinTemperature($event)"
     />
 
     <label for="maxTemperature">Max Temperature:</label>
     <input
       type="number"
       id="maxTemperature"
-      [value]="maxTemperature()"
-      (input)="updateMaxTemperature($event)"
+      [value]="temSer.maxTemperature()"
+      (input)="temSer.updateMaxTemperature($event)"
     />
 
     <label for="targetTemperature">Target Temperature:</label>
     <input
       type="number"
       id="targetTemperature"
-      [value]="targetTemperature()"
-      (input)="updateTargetTemperature($event)"
+      [value]="temSer.targetTemperature()"
+      (input)="temSer.updateTargetTemperature($event)"
     />
   </div>
 </div>
