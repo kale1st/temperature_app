@@ -1,25 +1,36 @@
 <div class="gauge-container">
   <div class="gauge">
     <app-temperature-display
-      [minTemperature]="minTemperature"
-      [maxTemperature]="maxTemperature"
-      [targetTemperature]="targetTemperature"
+      [minTemperature]="minTemperature()"
+      [maxTemperature]="maxTemperature()"
+      [targetTemperature]="targetTemperature()"
     ></app-temperature-display>
   </div>
 
   <!-- Input fields for temperatures -->
   <div class="temperature-inputs">
     <label for="minTemperature">Min Temperature:</label>
-    <input type="number" id="minTemperature" [(ngModel)]="minTemperature" />
+    <input
+      type="number"
+      id="minTemperature"
+      [value]="minTemperature()"
+      (input)="updateMinTemperature($event)"
+    />
 
     <label for="maxTemperature">Max Temperature:</label>
-    <input type="number" id="maxTemperature" [(ngModel)]="maxTemperature" />
+    <input
+      type="number"
+      id="maxTemperature"
+      [value]="maxTemperature()"
+      (input)="updateMaxTemperature($event)"
+    />
 
     <label for="targetTemperature">Target Temperature:</label>
     <input
       type="number"
       id="targetTemperature"
-      [(ngModel)]="targetTemperature"
+      [value]="targetTemperature()"
+      (input)="updateTargetTemperature($event)"
     />
   </div>
 </div>
