@@ -16,12 +16,14 @@ export class TemperatureDisplayService {
     const inputElement = event.target as HTMLInputElement;
     const value = inputElement.valueAsNumber;
     this.minTemperature.set(value);
+    this.targetTemperature.set(value);
   }
 
   updateMaxTemperature(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     const value = inputElement.valueAsNumber;
     this.maxTemperature.set(value);
+    this.targetTemperature.set(value);
   }
 
   updateTargetTemperature(event: Event): void {
