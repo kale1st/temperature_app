@@ -33,6 +33,8 @@ export class AppComponent {
   updateTargetTemperature(event: Event): void {
     const inputElement = event.target as HTMLInputElement;
     const value = inputElement.valueAsNumber;
-    this.targetTemperature.set(value);
+    if (value <= this.maxTemperature() && value >= this.minTemperature()) {
+      this.targetTemperature.set(value);
+    }
   }
 }
