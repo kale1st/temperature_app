@@ -1,0 +1,48 @@
+<div class="temperature-gauge">
+  <svg width="150" height="150" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" stroke="#ccc" stroke-width="2" fill="none" />
+
+    <!-- pointer (target temperature)) -->
+    <line
+      x1="50"
+      y1="50"
+      x2="50"
+      y2="10"
+      stroke="black"
+      stroke-width="2"
+      [attr.transform]="'rotate(' + calculateRotation() + ' 50 50)'"
+    />
+
+    <!-- Minimum temperature -->
+    <line
+      x1="50"
+      y1="5"
+      x2="50"
+      y2="15"
+      stroke="blue"
+      stroke-width="2"
+      transform="rotate(225 50 50)"
+    />
+    <!-- Maksimum temperature -->
+    <line
+      x1="50"
+      y1="5"
+      x2="50"
+      y2="15"
+      stroke="red"
+      stroke-width="2"
+      transform="rotate(135 50 50)"
+    />
+
+    <text x="10" y="95" fill="blue" font-size="10" text-anchor="middle">
+      {{ minTemperature }}°C
+    </text>
+
+    <text x="90" y="95" fill="red" font-size="10" text-anchor="middle">
+      {{ maxTemperature }}°C
+    </text>
+  </svg>
+
+  <!-- value of the target temperature -->
+  <div class="temperature-value">{{ targetTemperature }}°C</div>
+</div>
